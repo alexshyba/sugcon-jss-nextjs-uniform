@@ -14,7 +14,10 @@ class MyDocument extends Document {
         <CustomHead>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-   
+
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
           <link rel="preconnect" href="https://ajax.googleapis.com" />
           <link rel="dns-prefetch" href="https://ajax.googleapis.com" />
 
