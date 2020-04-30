@@ -1,6 +1,6 @@
 import React from 'react';
-import { Image } from 'cloudinary-react';
 import getConfig from 'next/config';
+
 const { publicRuntimeConfig } = getConfig();
 
 const CloudinaryImage = ({ src, className }) => {

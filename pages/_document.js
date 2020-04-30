@@ -11,15 +11,49 @@ class MyDocument extends Document {
     return (
       <Html>
         <CustomHead>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Roboto:ital,wght@0,400;0,700;1,700&display=swap"
-            rel="stylesheet"
-          />
+          <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+          <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         </CustomHead>
         <body className="leading-normal tracking-normal text-white gradient">
           <Main />
           <NextScript />
         </body>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+        const loadDynamicScript = (src, id, callback) => {
+  const existingScript = document.getElementById('#' + id);
+  if (!existingScript) {
+    const script = document.createElement('script');
+    script.src = src; // URL for the third-party library being loaded.
+    script.id = id; // e.g., googleMaps or stripe
+    script.async = false;
+    document.body.appendChild(script);
+    script.onload = () => {
+      if (callback) callback();
+    };
+  }
+  if (existingScript && callback) callback();
+};
+const onDomContentLoaded = (func) => {
+  console.log('here');
+  if (typeof window !== 'undefined') {
+      window.addEventListener('load', (event) => {
+      func();
+    });
+  }
+};
+        onDomContentLoaded(() => {
+            loadDynamicScript('https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js', 'webfont', () => {
+ WebFont.load({
+  google: {
+    families: ['Montserrat:300,700:latin', 'Roboto:700:latin']
+  }
+});
+            });
+            });`,
+          }}
+        ></script>
       </Html>
     );
   }
