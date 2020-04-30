@@ -12,8 +12,18 @@ class MyDocument extends Document {
     return (
       <Html>
         <CustomHead>
-          <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+   
+          <link rel="preconnect" href="https://ajax.googleapis.com" />
+          <link rel="dns-prefetch" href="https://ajax.googleapis.com" />
+
+          <link rel="preconnect" href="https://www.google-analytics.com" />
+          <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+          
+          <link rel="preconnect" href="https://www.googletagmanager.com" />
+          <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+          
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
           <script
             dangerouslySetInnerHTML={{
