@@ -4,6 +4,13 @@ import i18n from 'i18next';
 import { i18init } from '../src/lib/i18n';
 import '../styles/style.css';
 
+import Router from 'next/router'
+
+import * as gtag from '../utils/gtag'
+
+Router.events.on('routeChangeComplete', url => gtag.pageview(url))
+
+
 export default class App extends NextApp {
   render() {
     const { Component, pageProps } = this.props;
