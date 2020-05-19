@@ -14,6 +14,8 @@ Enabled for deployment to virtually any delivery platform:
 
 ### Provide environment variables
 
+In local development, these could be in the `.env` file. To be picked up by GitHub Actions, these should be in [GitHub Secrets](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets).
+
 - `NPM_TOKEN` - the token provided by Uniform team.
 - `UNIFORM_API_URL` - the endpoint of your Sitecore instance with Uniform connector installed.
 - `UNIFORM_DATA_URL - the endpoint of your Sitecore instance with Uniform connector installed.
